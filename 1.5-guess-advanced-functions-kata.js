@@ -45,7 +45,7 @@
 
 /* Function gameStats
  * shows player games and average turns per game calculated as totalTurns / games
- * @param turns
+ * @param none
  * @return none
  * @modifies totalTurns
  */
