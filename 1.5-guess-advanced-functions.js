@@ -1,25 +1,24 @@
 /* Guess Advanced Function by Mr. M. */
-// matches https://www.lucidchart.com/invitations/accept/78dd831f-d995-4438-909f-f9d5bbab4ed4
+// DOES NOT USE BREAKS - instead uses complex conditional operators.  Might use breaks to make it simpler. 
 
 /* Initialize Globals */
 var games = 0;
 var again = true;
 var totalTurns = 0;
 /* Play Again Loop */
-while (again == true) {
+while (again == true && guess !="q") {
 	games++;
 	/* Initialize Locals */
 	var turns = 0;
 	var guess = 0;
 	var answer = Math.floor(Math.random()*100)+1;
 	// console.log(answer);
-	while (guess != answer){
+	while (guess != answer && guess !="q"){
 		guess = prompt("Guess my number (1-100).");
 		if (guess == "q"){
 			alert("You quit.");
-			break;
 		}
-		if (validate(guess) == true){
+		else if (validate(guess) == true){
 			turns++;
 			if (guess < answer){
 				alert("Too low!");
@@ -36,8 +35,6 @@ while (again == true) {
 		}
 		else alert("Invalid guess, try again.");
 	}
-	// add another check for "q" and break
-if (guess == "q") break;
 }
 // game is over
 
@@ -47,7 +44,7 @@ if (guess == "q") break;
  * @return boolean
  */
 function validate(guess){
-	if (guess > 0 && guess < 101){
+	if (guess="q" ||  guess > 0 && guess < 101){
 		return true;
 	}
 	else return false;
